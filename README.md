@@ -4,11 +4,20 @@ There are two sub folders: `wp3` and `wp4` which store respectively Dockerfiles 
 
 # Wordpress 3
 
-Wordpress 3 uses MySQL 5.5 and PHP 5.6 but with a wrapper of mysqli for older php mysql `MYSQL_*` functions which are deprecated, thanks to the [MySQLi database layer](https://wordpress.org/plugins/mysqli "")
+Wordpress 3 uses MySQL 5.5 and PHP 5.6 but with a wrapper of mysqli for older php mysql `MYSQL_*` functions which are deprecated, thanks to the [MySQLi database layer](https://wordpress.org/plugins/mysqli "").
 
 Only Wordpress 3.2 and above are supported due to the absence of older php version and MySQL version.
 
-The Dockerfile uses Dockerfile build from the official [Docker Wordpress project](https://github.com/docker-library/wordpress "") with some minor modification to include `mysqli` plugin.
+The Dockerfile uses Dockerfile build from the official [Docker Wordpress project](https://github.com/docker-library/wordpress "") with some minor modifications to include `mysqli` plugin.
+
+To build and run images:
+- Copy `docker-compose.example.yml` to `docker-compose.yml`
+- Run `docker-compose build`
+- Setup usernames/passwords for each Wordpress containers in the environment file. Copy the file `env-example` to `.env`
+- Run shell script `run.sh` which will generate SQL script to create all usernames/passwords.
+- Run `docker-compose up`
+- Each container is given port range from `9100-9107`
+- Make sure the file in `data` is writable from the containers.
 
 # Wordpress 4
 
