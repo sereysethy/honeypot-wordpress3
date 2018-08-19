@@ -1,0 +1,180 @@
+version: '3.2'
+
+services:
+
+  wp3.2:
+    container_name: wp3.2
+    build:
+      context: .
+      dockerfile: build/wp3.2/Dockerfile
+    image: wordpress3.2
+    restart: always
+    ports:
+      - 9100:80
+    volumes:
+      - ./data/wp3.2:/var/www/html
+    logging:
+      driver: fluentd
+      options: 
+        tag: "docker.wp.{{.Name}}"
+    environment:
+      WORDPRESS_DB_HOST: ${DB_HOST}
+      WORDPRESS_DB_NAME: ${DB_NAME_32}
+      WORDPRESS_DB_USER: ${DB_USER_32}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_32}
+
+  wp3.3:
+    container_name: wp3.3
+    build:
+      context: .
+      dockerfile: build/wp3.3/Dockerfile
+    image: wordpress3.3
+    restart: always
+    ports:
+      - 9101:80
+    volumes:
+      - ./data/wp3.3:/var/www/html
+    logging:
+      driver: fluentd
+      options: 
+        tag: "docker.wp.{{.Name}}"
+    environment:
+      WORDPRESS_DB_HOST: ${DB_HOST}
+      WORDPRESS_DB_NAME: ${DB_NAME_33}
+      WORDPRESS_DB_USER: ${DB_USER_33}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_33}
+  
+  wp3.4:
+    container_name: wp3.4
+    build:
+      context: .
+      dockerfile: build/wp3.4/Dockerfile
+    image: wordpress3.4
+    restart: always
+    ports:
+      - 9102:80
+    volumes:
+      - ./data/wp3.4:/var/www/html
+    logging:
+      driver: fluentd
+      options: 
+        tag: "docker.wp.{{.Name}}"
+    environment:
+      WORDPRESS_DB_HOST: ${DB_HOST}
+      WORDPRESS_DB_NAME: ${DB_NAME_34}
+      WORDPRESS_DB_USER: ${DB_USER_34}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_34}
+
+  wp3.5:
+    container_name: wp3.5
+    build:
+      context: .
+      dockerfile: build/wp3.5/Dockerfile
+    image: wordpress3.5
+    restart: always
+    ports:
+      - 9103:80
+    volumes:
+      - ./data/wp3.5:/var/www/html
+    logging:
+      driver: fluentd
+      options: 
+        tag: "docker.wp.{{.Name}}"
+    environment:
+      WORDPRESS_DB_HOST: ${DB_HOST}
+      WORDPRESS_DB_NAME: ${DB_NAME_35}
+      WORDPRESS_DB_USER: ${DB_USER_35}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_35}
+
+  wp3.6:
+    container_name: wp3.6
+    build:
+      context: .
+      dockerfile: build/wp3.6/Dockerfile
+    image: wordpress3.6
+    restart: always
+    ports:
+      - 9104:80
+    volumes:
+      - ./data/wp3.6:/var/www/html
+    logging:
+      driver: fluentd
+      options: 
+        tag: "docker.wp.{{.Name}}"
+    environment:
+      WORDPRESS_DB_HOST: ${DB_HOST}
+      WORDPRESS_DB_NAME: ${DB_NAME_36}
+      WORDPRESS_DB_USER: ${DB_USER_36}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_36}
+  
+  wp3.7:
+    container_name: wp3.7
+    build:
+      context: .
+      dockerfile: build/wp3.7/Dockerfile
+    image: wordpress3.7
+    restart: always
+    ports:
+      - 9105:80
+    volumes:
+      - ./data/wp3.7:/var/www/html
+    logging:
+      driver: fluentd
+      options: 
+        tag: "docker.wp.{{.Name}}"
+    environment:
+      WORDPRESS_DB_HOST: ${DB_HOST}
+      WORDPRESS_DB_NAME: ${DB_NAME_37}
+      WORDPRESS_DB_USER: ${DB_USER_37}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_37}
+
+  wp3.8:
+    container_name: wp3.8
+    build:
+      context: .
+      dockerfile: build/wp3.8/Dockerfile
+    image: wordpress3.8
+    restart: always
+    ports:
+      - 9106:80
+    volumes:
+      - ./data/wp3.8:/var/www/html
+    logging:
+      driver: fluentd
+      options: 
+        tag: "docker.wp.{{.Name}}"
+    environment:
+      WORDPRESS_DB_HOST: ${DB_HOST}
+      WORDPRESS_DB_NAME: ${DB_NAME_38}
+      WORDPRESS_DB_USER: ${DB_USER_38}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_38}
+
+  wp3.8.27:
+    container_name: wp3.8.27
+    build:
+      context: .
+      dockerfile: build/wp3.8.27/Dockerfile
+    image: wordpress3.8.27
+    restart: always
+    ports:
+      - 9107:80
+    volumes:
+      - ./data/wp3.8.27:/var/www/html
+    logging:
+      driver: fluentd
+      options: 
+        tag: "docker.wp.{{.Name}}"
+    environment:
+      WORDPRESS_DB_HOST: ${DB_HOST}
+      WORDPRESS_DB_NAME: ${DB_NAME_3827}
+      WORDPRESS_DB_USER: ${DB_USER_3827}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_3827}
+
+  mysql:
+    image: mysql:5.5
+    restart: always
+    volumes:
+      - ./data/db:/var/lib/mysql
+      - ./credentials:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
