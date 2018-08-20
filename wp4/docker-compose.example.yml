@@ -2,14 +2,14 @@ version: '3.2'
 
 services:
 
-  wp3.9:
-    container_name: wp3.9
-    image: wordpress:3.9
+  wp3.9.2:
+    container_name: wp3.9.2
+    image: wordpress:3.9.2
     restart: always
     ports:
       - 9200:80
     volumes:
-      - ./data/www/wp3.9:/var/www/html
+      - ./data/www/wp3.9.2:/var/www/html
     logging:
       driver: fluentd
       options:
@@ -19,18 +19,18 @@ services:
     environment:
       MYSQL_PORT_3306_TCP: ${DB_HOST}
       WORDPRESS_DB_HOST: ${DB_HOST}
-      WORDPRESS_DB_NAME: ${DB_NAME_39}
-      WORDPRESS_DB_USER: ${DB_USER_39}
-      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_39}
+      WORDPRESS_DB_NAME: ${DB_NAME_392}
+      WORDPRESS_DB_USER: ${DB_USER_392}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_392}
 
-  wp4.0:
-    container_name: wp4.0
-    image: wordpress:4.0
+  wp4.0.24:
+    container_name: wp4.0.24
+    image: wordpress:4.0.24
     restart: always
     ports:
       - 9201:80
     volumes:
-      - ./data/www/wp4.0:/var/www/html
+      - ./data/www/wp4.0.24:/var/www/html
     logging:
       driver: fluentd
       options:
@@ -40,18 +40,18 @@ services:
     environment:
       MYSQL_PORT_3306_TCP: ${DB_HOST}
       WORDPRESS_DB_HOST: ${DB_HOST}
-      WORDPRESS_DB_NAME: ${DB_NAME_40}
-      WORDPRESS_DB_USER: ${DB_USER_40}
-      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_40}
+      WORDPRESS_DB_NAME: ${DB_NAME_4024}
+      WORDPRESS_DB_USER: ${DB_USER_4024}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_4024}
 
-  wp4.1:
-    container_name: wp4.1
-    image: wordpress:4.1
+  wp4.1.2:
+    container_name: wp4.1.2
+    image: wordpress:4.1.2
     restart: always
     ports:
       - 9202:80
     volumes:
-      - ./data/www/wp4.1:/var/www/html
+      - ./data/www/wp4.1.2:/var/www/html
     logging:
       driver: fluentd
       options:
@@ -60,18 +60,18 @@ services:
       - mysql:mysql
     environment:
       WORDPRESS_DB_HOST: ${DB_HOST}
-      WORDPRESS_DB_NAME: ${DB_NAME_41}
-      WORDPRESS_DB_USER: ${DB_USER_41}
-      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_41}  
+      WORDPRESS_DB_NAME: ${DB_NAME_412}
+      WORDPRESS_DB_USER: ${DB_USER_412}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_412}  
 
-  wp4.2:
-    container_name: wp4.2
-    image: wordpress:4.2
+  wp4.2.4:
+    container_name: wp4.2.4
+    image: wordpress:4.2.4
     restart: always
     ports:
       - 9203:80
     volumes:
-      - ./data/www/wp4.2:/var/www/html
+      - ./data/www/wp4.2.4:/var/www/html
     logging:
       driver: fluentd
       options:
@@ -80,18 +80,18 @@ services:
       - mysql:mysql
     environment:
       WORDPRESS_DB_HOST: ${DB_HOST}
-      WORDPRESS_DB_NAME: ${DB_NAME_42}
-      WORDPRESS_DB_USER: ${DB_USER_42}
-      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_42}
+      WORDPRESS_DB_NAME: ${DB_NAME_424}
+      WORDPRESS_DB_USER: ${DB_USER_424}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_424}
 
-  wp4.3:
-    container_name: wp4.3
-    image: wordpress:4.3
+  wp4.3.1:
+    container_name: wp4.3.1
+    image: wordpress:4.3.1
     restart: always
     ports:
       - 9204:80
     volumes:
-      - ./data/www/wp4.3:/var/www/html
+      - ./data/www/wp4.3.1:/var/www/html
     logging:
       driver: fluentd
       options:
@@ -100,18 +100,18 @@ services:
       - mysql:mysql
     environment:
       WORDPRESS_DB_HOST: ${DB_HOST}
-      WORDPRESS_DB_NAME: ${DB_NAME_43}
-      WORDPRESS_DB_USER: ${DB_USER_43}
-      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_43}
+      WORDPRESS_DB_NAME: ${DB_NAME_431}
+      WORDPRESS_DB_USER: ${DB_USER_431}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_431}
 
-  wp4.4:
-    container_name: wp4.4
-    image: wordpress:4.4
+  wp4.4.2:
+    container_name: wp4.4.2
+    image: wordpress:4.4.2
     restart: always
     ports:
       - 9205:80
     volumes:
-      - ./data/www/wp4.4:/var/www/html
+      - ./data/www/wp4.4.2:/var/www/html
     logging:
       driver: fluentd
       options:
@@ -120,18 +120,18 @@ services:
       - mysql:mysql
     environment:
       WORDPRESS_DB_HOST: ${DB_HOST}
-      WORDPRESS_DB_NAME: ${DB_NAME_44}
-      WORDPRESS_DB_USER: ${DB_USER_44}
-      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_44}
+      WORDPRESS_DB_NAME: ${DB_NAME_442}
+      WORDPRESS_DB_USER: ${DB_USER_442}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_442}
 
-  wp4.5:
-    container_name: wp4.5
-    image: wordpress:4.5
+  wp4.5.3:
+    container_name: wp4.5.3
+    image: wordpress:4.5.3
     restart: always
     ports:
       - 9206:80
     volumes:
-      - ./data/www/wp4.5:/var/www/html
+      - ./data/www/wp4.5.3:/var/www/html
     logging:
       driver: fluentd
       options:
@@ -140,18 +140,18 @@ services:
       - mysql:mysql
     environment:
       WORDPRESS_DB_HOST: ${DB_HOST}
-      WORDPRESS_DB_NAME: ${DB_NAME_45}
-      WORDPRESS_DB_USER: ${DB_USER_45}
-      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_45}
+      WORDPRESS_DB_NAME: ${DB_NAME_453}
+      WORDPRESS_DB_USER: ${DB_USER_453}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_453}
 
-  wp4.6:
-    container_name: wp4.6
-    image: wordpress:4.6
+  wp4.6.1:
+    container_name: wp4.6.1
+    image: wordpress:4.6.1
     restart: always
     ports:
       - 9207:80
     volumes:
-      - ./data/www/wp4.6:/var/www/html
+      - ./data/www/wp4.6.1:/var/www/html
     logging:
       driver: fluentd
       options:
@@ -160,63 +160,63 @@ services:
       - mysql:mysql
     environment:
       WORDPRESS_DB_HOST: ${DB_HOST}
-      WORDPRESS_DB_NAME: ${DB_NAME_46}
-      WORDPRESS_DB_USER: ${DB_USER_46}
-      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_46}
+      WORDPRESS_DB_NAME: ${DB_NAME_461}
+      WORDPRESS_DB_USER: ${DB_USER_461}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_461}
 
-  wp4.7:
-    container_name: wp4.7
-    image: wordpress:4.7
+  wp4.7.5:
+    container_name: wp4.7.5
+    image: wordpress:4.7.5
     restart: always
     ports:
       - 9208:80
     volumes:
-      - ./data/www/wp4.7:/var/www/html
+      - ./data/www/wp4.7.5:/var/www/html
     logging:
       driver: fluentd
       options:
         tag: "docker.wp.{{.Name}}"
     environment:
       WORDPRESS_DB_HOST: ${DB_HOST}
-      WORDPRESS_DB_NAME: ${DB_NAME_47}
-      WORDPRESS_DB_USER: ${DB_USER_47}
-      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_47}
+      WORDPRESS_DB_NAME: ${DB_NAME_475}
+      WORDPRESS_DB_USER: ${DB_USER_475}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_475}
 
-  wp4.8:
-    container_name: wp4.8
-    image: wordpress:4.8
+  wp4.8.3:
+    container_name: wp4.8.3
+    image: wordpress:4.8.3
     restart: always
     ports:
       - 9209:80
     volumes:
-      - ./data/www/wp4.8:/var/www/html
+      - ./data/www/wp4.8.3:/var/www/html
     logging:
       driver: fluentd
       options:
         tag: "docker.wp.{{.Name}}"
     environment:
       WORDPRESS_DB_HOST: ${DB_HOST}
-      WORDPRESS_DB_NAME: ${DB_NAME_48}
-      WORDPRESS_DB_USER: ${DB_USER_48}
-      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_48}
+      WORDPRESS_DB_NAME: ${DB_NAME_483}
+      WORDPRESS_DB_USER: ${DB_USER_483}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_483}
 
-  wp4.9:
-    container_name: wp4.9
-    image: wordpress:4.9
+  wp4.9.0:
+    container_name: wp4.9.0
+    image: wordpress:4.9.0
     restart: always
     ports:
       - 9210:80
     volumes:
-      - ./data/www/wp4.9:/var/www/html
+      - ./data/www/wp4.9.0:/var/www/html
     logging:
       driver: fluentd
       options:
         tag: "docker.wp.{{.Name}}"
     environment:
       WORDPRESS_DB_HOST: ${DB_HOST}
-      WORDPRESS_DB_NAME: ${DB_NAME_49}
-      WORDPRESS_DB_USER: ${DB_USER_49}
-      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_49}
+      WORDPRESS_DB_NAME: ${DB_NAME_490}
+      WORDPRESS_DB_USER: ${DB_USER_490}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_490}
 
   wp4.9.6:
     container_name: wp4.9.6
