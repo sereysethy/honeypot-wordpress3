@@ -27,7 +27,7 @@ services:
     container_name: wp3.3
     build:
       context: .
-      dockerfile: build/www/wp3.3/Dockerfile
+      dockerfile: build/wp3.3/Dockerfile
     image: wordpress3.3
     restart: always
     ports:
