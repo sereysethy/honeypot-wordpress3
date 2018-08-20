@@ -12,7 +12,7 @@ services:
     ports:
       - 9100:80
     volumes:
-      - ./data/wp3.2:/var/www/html
+      - ./data/www/wp3.2:/var/www/html
     logging:
       driver: fluentd
       options: 
@@ -27,13 +27,13 @@ services:
     container_name: wp3.3
     build:
       context: .
-      dockerfile: build/wp3.3/Dockerfile
+      dockerfile: build/www/wp3.3/Dockerfile
     image: wordpress3.3
     restart: always
     ports:
       - 9101:80
     volumes:
-      - ./data/wp3.3:/var/www/html
+      - ./data/www/wp3.3:/var/www/html
     logging:
       driver: fluentd
       options: 
@@ -54,7 +54,7 @@ services:
     ports:
       - 9102:80
     volumes:
-      - ./data/wp3.4:/var/www/html
+      - ./data/www/wp3.4:/var/www/html
     logging:
       driver: fluentd
       options: 
@@ -75,7 +75,7 @@ services:
     ports:
       - 9103:80
     volumes:
-      - ./data/wp3.5:/var/www/html
+      - ./data/www/wp3.5:/var/www/html
     logging:
       driver: fluentd
       options: 
@@ -96,7 +96,7 @@ services:
     ports:
       - 9104:80
     volumes:
-      - ./data/wp3.6:/var/www/html
+      - ./data/www/wp3.6:/var/www/html
     logging:
       driver: fluentd
       options: 
@@ -117,7 +117,7 @@ services:
     ports:
       - 9105:80
     volumes:
-      - ./data/wp3.7:/var/www/html
+      - ./data/www/wp3.7:/var/www/html
     logging:
       driver: fluentd
       options: 
@@ -138,7 +138,7 @@ services:
     ports:
       - 9106:80
     volumes:
-      - ./data/wp3.8:/var/www/html
+      - ./data/www/wp3.8:/var/www/html
     logging:
       driver: fluentd
       options: 
@@ -159,7 +159,7 @@ services:
     ports:
       - 9107:80
     volumes:
-      - ./data/wp3.8.27:/var/www/html
+      - ./data/www/wp3.8.27:/var/www/html
     logging:
       driver: fluentd
       options: 

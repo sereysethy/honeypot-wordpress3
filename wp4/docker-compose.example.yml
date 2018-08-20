@@ -1,0 +1,265 @@
+version: '3.2'
+
+services:
+
+  wp3.9:
+    container_name: wp39
+    image: wordpress:3.9
+    restart: always
+    ports:
+      - 9200:80
+    volumes:
+      - ./data/www/wp3.9:/var/www/html
+    logging:
+      driver: fluentd
+      options:
+        tag: "docker.wp.{{.Name}}"
+    links:
+      - mysql:mysql
+    environment:
+      MYSQL_PORT_3306_TCP: mysql
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_NAME: ${DB_NAME_39}
+      WORDPRESS_DB_USER: ${DB_USER_39}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_39}
+
+  wp4.0:
+    container_name: wp4.0
+    image: wordpress:4.0
+    restart: always
+    ports:
+      - 9201:80
+    volumes:
+      - ./data/www/wp4.0:/var/www/html
+    logging:
+      driver: fluentd
+      options:
+        tag: "docker.wp.{{.Name}}"
+    links:
+      - mysql:mysql
+    environment:
+      MYSQL_PORT_3306_TCP: mysql
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_NAME: ${DB_NAME_40}
+      WORDPRESS_DB_USER: ${DB_USER_40}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_40}
+
+  wp4.1:
+    container_name: wp4.1
+    image: wordpress:4.1
+    restart: always
+    ports:
+      - 9202:80
+    volumes:
+      - ./data/www/wp4.1:/var/www/html
+    logging:
+      driver: fluentd
+      options:
+        tag: "docker.wp.{{.Name}}"
+    links:
+      - mysql:mysql
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_NAME: ${DB_NAME_41}
+      WORDPRESS_DB_USER: ${DB_USER_41}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_41}  
+
+  wp4.2:
+    container_name: wp4.2
+    image: wordpress:4.2
+    restart: always
+    ports:
+      - 9203:80
+    volumes:
+      - ./data/www/wp4.2:/var/www/html
+    logging:
+      driver: fluentd
+      options:
+        tag: "docker.wp.{{.Name}}"
+    links:
+      - mysql:mysql
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_NAME: ${DB_NAME_42}
+      WORDPRESS_DB_USER: ${DB_USER_42}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_42}
+
+  wp4.3:
+    container_name: wp4.3
+    image: wordpress:4.3
+    restart: always
+    ports:
+      - 9204:80
+    volumes:
+      - ./data/www/wp4.3:/var/www/html
+    logging:
+      driver: fluentd
+      options:
+        tag: "docker.wp.{{.Name}}"
+    links:
+      - mysql:mysql
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_NAME: ${DB_NAME_43}
+      WORDPRESS_DB_USER: ${DB_USER_43}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_43}
+
+  wp4.4:
+    container_name: wp4.4
+    image: wordpress:4.4
+    restart: always
+    ports:
+      - 9205:80
+    volumes:
+      - ./data/www/wp4.4:/var/www/html
+    logging:
+      driver: fluentd
+      options:
+        tag: "docker.wp.{{.Name}}"
+    links:
+      - mysql:mysql
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_NAME: ${DB_NAME_44}
+      WORDPRESS_DB_USER: ${DB_USER_44}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_44}
+
+  wp4.5:
+    container_name: wp4.5
+    image: wordpress:4.5
+    restart: always
+    ports:
+      - 9206:80
+    volumes:
+      - ./data/www/wp4.5:/var/www/html
+    logging:
+      driver: fluentd
+      options:
+        tag: "docker.wp.{{.Name}}"
+    links:
+      - mysql:mysql
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_NAME: ${DB_NAME_45}
+      WORDPRESS_DB_USER: ${DB_USER_45}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_45}
+
+  wp4.6:
+    container_name: wp4.6
+    image: wordpress:4.6
+    restart: always
+    ports:
+      - 9207:80
+    volumes:
+      - ./data/www/wp4.6:/var/www/html
+    logging:
+      driver: fluentd
+      options:
+        tag: "docker.wp.{{.Name}}"
+    links:
+      - mysql:mysql
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_NAME: ${DB_NAME_46}
+      WORDPRESS_DB_USER: ${DB_USER_46}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_46}
+
+  wp4.7:
+    container_name: wp4.7
+    image: wordpress:4.7
+    restart: always
+    ports:
+      - 9208:80
+    volumes:
+      - ./data/www/wp4.7:/var/www/html
+    logging:
+      driver: fluentd
+      options:
+        tag: "docker.wp.{{.Name}}"
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_NAME: ${DB_NAME_47}
+      WORDPRESS_DB_USER: ${DB_USER_47}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_47}
+
+  wp4.8:
+    container_name: wp4.8
+    image: wordpress:4.8
+    restart: always
+    ports:
+      - 9209:80
+    volumes:
+      - ./data/www/wp4.8:/var/www/html
+    logging:
+      driver: fluentd
+      options:
+        tag: "docker.wp.{{.Name}}"
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_NAME: ${DB_NAME_48}
+      WORDPRESS_DB_USER: ${DB_USER_48}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_48}
+
+  wp4.9:
+    container_name: wp4.9
+    image: wordpress:4.9
+    restart: always
+    ports:
+      - 9209:80
+    volumes:
+      - ./data/www/wp4.9:/var/www/html
+    logging:
+      driver: fluentd
+      options:
+        tag: "docker.wp.{{.Name}}"
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_NAME: ${DB_NAME_49}
+      WORDPRESS_DB_USER: ${DB_USER_49}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_49}
+
+  wp4.9.6:
+    container_name: wp4.9.6
+    image: wordpress:4.9.6
+    restart: always
+    ports:
+      - 9210:80
+    volumes:
+      - ./data/www/wp4.9.6:/var/www/html
+    logging:
+      driver: fluentd
+      options:
+        tag: "docker.wp.{{.Name}}"
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_NAME: ${DB_NAME_496}
+      WORDPRESS_DB_USER: ${DB_USER_496}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_496}
+
+  wp4.9.8:
+    container_name: wp4.9.8
+    image: wordpress:4.9.8
+    restart: always
+    ports:
+      - 9211:80
+    volumes:
+      - ./data/www/wp4.9.8:/var/www/html
+    logging:
+      driver: fluentd
+      options:
+        tag: "docker.wp.{{.Name}}"
+    environment:
+      WORDPRESS_DB_HOST: ${DB_HOST}
+      WORDPRESS_DB_NAME: ${DB_NAME_498}
+      WORDPRESS_DB_USER: ${DB_USER_498}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_498}
+
+  mysql:
+    container_name: mysql
+    image: mysql:5.7
+    restart: always
+    volumes:
+      - ./data:/var/lib/mysql
+      - ./credentials:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
