@@ -3,7 +3,7 @@ version: '3.2'
 services:
 
   wp3.9:
-    container_name: wp39
+    container_name: wp3.9
     image: wordpress:3.9
     restart: always
     ports:
@@ -17,8 +17,7 @@ services:
     links:
       - mysql:mysql
     environment:
-      MYSQL_PORT_3306_TCP: mysql
-      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_HOST: ${DB_HOST}
       WORDPRESS_DB_NAME: ${DB_NAME_39}
       WORDPRESS_DB_USER: ${DB_USER_39}
       WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_39}
@@ -38,8 +37,7 @@ services:
     links:
       - mysql:mysql
     environment:
-      MYSQL_PORT_3306_TCP: mysql
-      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_HOST: ${DB_HOST}
       WORDPRESS_DB_NAME: ${DB_NAME_40}
       WORDPRESS_DB_USER: ${DB_USER_40}
       WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_40}
@@ -59,7 +57,7 @@ services:
     links:
       - mysql:mysql
     environment:
-      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_HOST: ${DB_HOST}
       WORDPRESS_DB_NAME: ${DB_NAME_41}
       WORDPRESS_DB_USER: ${DB_USER_41}
       WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_41}  
@@ -79,7 +77,7 @@ services:
     links:
       - mysql:mysql
     environment:
-      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_HOST: ${DB_HOST}
       WORDPRESS_DB_NAME: ${DB_NAME_42}
       WORDPRESS_DB_USER: ${DB_USER_42}
       WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_42}
@@ -99,7 +97,7 @@ services:
     links:
       - mysql:mysql
     environment:
-      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_HOST: ${DB_HOST}
       WORDPRESS_DB_NAME: ${DB_NAME_43}
       WORDPRESS_DB_USER: ${DB_USER_43}
       WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_43}
@@ -119,7 +117,7 @@ services:
     links:
       - mysql:mysql
     environment:
-      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_HOST: ${DB_HOST}
       WORDPRESS_DB_NAME: ${DB_NAME_44}
       WORDPRESS_DB_USER: ${DB_USER_44}
       WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_44}
@@ -139,7 +137,7 @@ services:
     links:
       - mysql:mysql
     environment:
-      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_HOST: ${DB_HOST}
       WORDPRESS_DB_NAME: ${DB_NAME_45}
       WORDPRESS_DB_USER: ${DB_USER_45}
       WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_45}
@@ -159,7 +157,7 @@ services:
     links:
       - mysql:mysql
     environment:
-      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_HOST: ${DB_HOST}
       WORDPRESS_DB_NAME: ${DB_NAME_46}
       WORDPRESS_DB_USER: ${DB_USER_46}
       WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_46}
@@ -177,7 +175,7 @@ services:
       options:
         tag: "docker.wp.{{.Name}}"
     environment:
-      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_HOST: ${DB_HOST}
       WORDPRESS_DB_NAME: ${DB_NAME_47}
       WORDPRESS_DB_USER: ${DB_USER_47}
       WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_47}
@@ -195,7 +193,7 @@ services:
       options:
         tag: "docker.wp.{{.Name}}"
     environment:
-      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_HOST: ${DB_HOST}
       WORDPRESS_DB_NAME: ${DB_NAME_48}
       WORDPRESS_DB_USER: ${DB_USER_48}
       WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_48}
@@ -213,7 +211,7 @@ services:
       options:
         tag: "docker.wp.{{.Name}}"
     environment:
-      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_HOST: ${DB_HOST}
       WORDPRESS_DB_NAME: ${DB_NAME_49}
       WORDPRESS_DB_USER: ${DB_USER_49}
       WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_49}
@@ -231,7 +229,7 @@ services:
       options:
         tag: "docker.wp.{{.Name}}"
     environment:
-      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_HOST: ${DB_HOST}
       WORDPRESS_DB_NAME: ${DB_NAME_496}
       WORDPRESS_DB_USER: ${DB_USER_496}
       WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_496}
