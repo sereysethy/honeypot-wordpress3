@@ -205,7 +205,7 @@ services:
     image: wordpress:4.9
     restart: always
     ports:
-      - 9209:80
+      - 9210:80
     volumes:
       - ./data/www/wp4.9:/var/www/html
     logging:
@@ -223,7 +223,7 @@ services:
     image: wordpress:4.9.6
     restart: always
     ports:
-      - 9210:80
+      - 9211:80
     volumes:
       - ./data/www/wp4.9.6:/var/www/html
     logging:
@@ -241,7 +241,7 @@ services:
     image: wordpress:4.9.8
     restart: always
     ports:
-      - 9211:80
+      - 9212:80
     volumes:
       - ./data/www/wp4.9.8:/var/www/html
     logging:
