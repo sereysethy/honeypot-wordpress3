@@ -46,7 +46,7 @@ services:
 
   wp4.0.24:
     container_name: wp4.0.24
-    image: wordpress:4.0.24
+    image: wordpress:4.0
     restart: always
     ports:
       - 9202:80
