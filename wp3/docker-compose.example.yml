@@ -170,6 +170,69 @@ services:
       WORDPRESS_DB_USER: ${DB_USER_3827}
       WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_3827}
 
+  wp3.9:
+    container_name: wp3.9
+    build:
+      context: .
+      dockerfile: build/wp3.9/Dockerfile
+    image: wordpress3.9
+    restart: always
+    ports:
+      - 9108:80
+    volumes:
+      - ./data/www/wp3.9:/var/www/html
+    logging:
+      driver: fluentd
+      options: 
+        tag: "docker.wp.{{.Name}}"
+    environment:
+      WORDPRESS_DB_HOST: ${DB_HOST}
+      WORDPRESS_DB_NAME: ${DB_NAME_39}
+      WORDPRESS_DB_USER: ${DB_USER_39}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_39}
+
+  wp3.9.4:
+    container_name: wp3.9.4
+    build:
+      context: .
+      dockerfile: build/wp3.9.4/Dockerfile
+    image: wordpress3.9.4
+    restart: always
+    ports:
+      - 9109:80
+    volumes:
+      - ./data/www/wp3.9.4:/var/www/html
+    logging:
+      driver: fluentd
+      options: 
+        tag: "docker.wp.{{.Name}}"
+    environment:
+      WORDPRESS_DB_HOST: ${DB_HOST}
+      WORDPRESS_DB_NAME: ${DB_NAME_394}
+      WORDPRESS_DB_USER: ${DB_USER_394}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_394}
+
+  wp3.9.20:
+    container_name: wp3.9.20
+    build:
+      context: .
+      dockerfile: build/wp3.9.20/Dockerfile
+    image: wordpress3.9.20
+    restart: always
+    ports:
+      - 9110:80
+    volumes:
+      - ./data/www/wp3.9.20:/var/www/html
+    logging:
+      driver: fluentd
+      options: 
+        tag: "docker.wp.{{.Name}}"
+    environment:
+      WORDPRESS_DB_HOST: ${DB_HOST}
+      WORDPRESS_DB_NAME: ${DB_NAME_3920}
+      WORDPRESS_DB_USER: ${DB_USER_3920}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_3920}
+
   mysql:
     container_name: mysql5.5
     image: mysql:5.5

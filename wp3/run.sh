@@ -2,7 +2,7 @@
 
 ENV_FILE=".env"
 OUTPUT_FILE="./credentials/create_users_db.sql"
-WP="32 33 34 35 36 37 38 3827"
+WP="32 33 34 35 36 37 38 3827 39 394 3920"
 
 # clean up
 rm -rf $OUTPUT_FILE

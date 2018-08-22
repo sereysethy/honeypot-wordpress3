@@ -2,48 +2,6 @@ version: '3.2'
 
 services:
 
-  wp3.9.1:
-    container_name: wp3.9.1
-    image: wordpress:3.9.1
-    restart: always
-    ports:
-      - 9200:80
-    volumes:
-      - ./data/www/wp3.9.1:/var/www/html
-    logging:
-      driver: fluentd
-      options:
-        tag: "docker.wp.{{.Name}}"
-    links:
-      - mysql:mysql
-    environment:
-      MYSQL_PORT_3306_TCP: ${DB_HOST}
-      WORDPRESS_DB_HOST: ${DB_HOST}
-      WORDPRESS_DB_NAME: ${DB_NAME_391}
-      WORDPRESS_DB_USER: ${DB_USER_391}
-      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_391}
-
-  wp3.9.2:
-    container_name: wp3.9.2
-    image: wordpress:3.9.2
-    restart: always
-    ports:
-      - 9201:80
-    volumes:
-      - ./data/www/wp3.9.2:/var/www/html
-    logging:
-      driver: fluentd
-      options:
-        tag: "docker.wp.{{.Name}}"
-    links:
-      - mysql:mysql
-    environment:
-      MYSQL_PORT_3306_TCP: ${DB_HOST}
-      WORDPRESS_DB_HOST: ${DB_HOST}
-      WORDPRESS_DB_NAME: ${DB_NAME_392}
-      WORDPRESS_DB_USER: ${DB_USER_392}
-      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_392}
-
   wp4.0.24:
     container_name: wp4.0.24
     image: wordpress:4.0
