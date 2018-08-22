@@ -2,12 +2,33 @@ version: '3.2'
 
 services:
 
+  wp3.9.1:
+    container_name: wp3.9.1
+    image: wordpress:3.9.1
+    restart: always
+    ports:
+      - 9200:80
+    volumes:
+      - ./data/www/wp3.9.1:/var/www/html
+    logging:
+      driver: fluentd
+      options:
+        tag: "docker.wp.{{.Name}}"
+    links:
+      - mysql:mysql
+    environment:
+      MYSQL_PORT_3306_TCP: ${DB_HOST}
+      WORDPRESS_DB_HOST: ${DB_HOST}
+      WORDPRESS_DB_NAME: ${DB_NAME_391}
+      WORDPRESS_DB_USER: ${DB_USER_391}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_391}
+
   wp3.9.2:
     container_name: wp3.9.2
     image: wordpress:3.9.2
     restart: always
     ports:
-      - 9200:80
+      - 9201:80
     volumes:
       - ./data/www/wp3.9.2:/var/www/html
     logging:
@@ -28,7 +49,7 @@ services:
     image: wordpress:4.0.24
     restart: always
     ports:
-      - 9201:80
+      - 9202:80
     volumes:
       - ./data/www/wp4.0.24:/var/www/html
     logging:
@@ -49,7 +70,7 @@ services:
     image: wordpress:4.1.2
     restart: always
     ports:
-      - 9202:80
+      - 9203:80
     volumes:
       - ./data/www/wp4.1.2:/var/www/html
     logging:
@@ -69,7 +90,7 @@ services:
     image: wordpress:4.2.4
     restart: always
     ports:
-      - 9203:80
+      - 9204:80
     volumes:
       - ./data/www/wp4.2.4:/var/www/html
     logging:
@@ -89,7 +110,7 @@ services:
     image: wordpress:4.3.1
     restart: always
     ports:
-      - 9204:80
+      - 9205:80
     volumes:
       - ./data/www/wp4.3.1:/var/www/html
     logging:
@@ -109,7 +130,7 @@ services:
     image: wordpress:4.4.2
     restart: always
     ports:
-      - 9205:80
+      - 9206:80
     volumes:
       - ./data/www/wp4.4.2:/var/www/html
     logging:
@@ -129,7 +150,7 @@ services:
     image: wordpress:4.5.3
     restart: always
     ports:
-      - 9206:80
+      - 9207:80
     volumes:
       - ./data/www/wp4.5.3:/var/www/html
     logging:
@@ -149,7 +170,7 @@ services:
     image: wordpress:4.6.1
     restart: always
     ports:
-      - 9207:80
+      - 9208:80
     volumes:
       - ./data/www/wp4.6.1:/var/www/html
     logging:
@@ -169,7 +190,7 @@ services:
     image: wordpress:4.7.5
     restart: always
     ports:
-      - 9208:80
+      - 9209:80
     volumes:
       - ./data/www/wp4.7.5:/var/www/html
     logging:
@@ -182,12 +203,30 @@ services:
       WORDPRESS_DB_USER: ${DB_USER_475}
       WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_475}
 
+  wp4.8.0:
+    container_name: wp4.8.0
+    image: wordpress:4.8.0
+    restart: always
+    ports:
+      - 9210:80
+    volumes:
+      - ./data/www/wp4.8.0:/var/www/html
+    logging:
+      driver: fluentd
+      options:
+        tag: "docker.wp.{{.Name}}"
+    environment:
+      WORDPRESS_DB_HOST: ${DB_HOST}
+      WORDPRESS_DB_NAME: ${DB_NAME_480}
+      WORDPRESS_DB_USER: ${DB_USER_480}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD_480}
+
   wp4.8.3:
     container_name: wp4.8.3
     image: wordpress:4.8.3
     restart: always
     ports:
-      - 9209:80
+      - 9211:80
     volumes:
       - ./data/www/wp4.8.3:/var/www/html
     logging:
@@ -205,7 +244,7 @@ services:
     image: wordpress:4.9.0
     restart: always
     ports:
-      - 9210:80
+      - 9212:80
     volumes:
       - ./data/www/wp4.9.0:/var/www/html
     logging:
@@ -223,7 +262,7 @@ services:
     image: wordpress:4.9.6
     restart: always
     ports:
-      - 9211:80
+      - 9213:80
     volumes:
       - ./data/www/wp4.9.6:/var/www/html
     logging:
@@ -241,7 +280,7 @@ services:
     image: wordpress:4.9.8
     restart: always
     ports:
-      - 9212:80
+      - 9214:80
     volumes:
       - ./data/www/wp4.9.8:/var/www/html
     logging:

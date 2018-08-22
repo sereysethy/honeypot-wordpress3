@@ -21,3 +21,18 @@ To build and run images:
 
 # Wordpress 4
 
+In WP4, we deploy these Wordpress versions:
+
+- `3.9.1`
+- `3.9.2`
+- `4.0.24`
+- `4.1.2`
+- `4.3.1`
+- `4.4.2`
+- `4.5.3`
+- `4.6.1`
+- `4.7.5`
+- `4.8.0`
+- `4.8.3`
+- `4.9.0`
+- `4.9.8`
