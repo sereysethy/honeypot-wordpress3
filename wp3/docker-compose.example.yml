@@ -15,7 +15,8 @@ services:
       - ./data/www/wp3.2:/var/www/html
     logging:
       driver: fluentd
-      options: 
+      options:
+        fluentd-address: ${FLUENTD_HOST}
         tag: "docker.wp.{{.Name}}"
     environment:
       WORDPRESS_DB_HOST: ${DB_HOST}
@@ -36,7 +37,8 @@ services:
       - ./data/www/wp3.3:/var/www/html
     logging:
       driver: fluentd
-      options: 
+      options:
+        fluentd-address: ${FLUENTD_HOST}
         tag: "docker.wp.{{.Name}}"
     environment:
       WORDPRESS_DB_HOST: ${DB_HOST}
@@ -57,7 +59,8 @@ services:
       - ./data/www/wp3.4:/var/www/html
     logging:
       driver: fluentd
-      options: 
+      options:
+        fluentd-address: ${FLUENTD_HOST}
         tag: "docker.wp.{{.Name}}"
     environment:
       WORDPRESS_DB_HOST: ${DB_HOST}
@@ -78,7 +81,8 @@ services:
       - ./data/www/wp3.5:/var/www/html
     logging:
       driver: fluentd
-      options: 
+      options:
+        fluentd-address: ${FLUENTD_HOST}
         tag: "docker.wp.{{.Name}}"
     environment:
       WORDPRESS_DB_HOST: ${DB_HOST}
@@ -99,7 +103,8 @@ services:
       - ./data/www/wp3.6:/var/www/html
     logging:
       driver: fluentd
-      options: 
+      options:
+        fluentd-address: ${FLUENTD_HOST}
         tag: "docker.wp.{{.Name}}"
     environment:
       WORDPRESS_DB_HOST: ${DB_HOST}
@@ -120,7 +125,8 @@ services:
       - ./data/www/wp3.7:/var/www/html
     logging:
       driver: fluentd
-      options: 
+      options:
+        fluentd-address: ${FLUENTD_HOST}
         tag: "docker.wp.{{.Name}}"
     environment:
       WORDPRESS_DB_HOST: ${DB_HOST}
@@ -141,7 +147,8 @@ services:
       - ./data/www/wp3.8:/var/www/html
     logging:
       driver: fluentd
-      options: 
+      options:
+        fluentd-address: ${FLUENTD_HOST}
         tag: "docker.wp.{{.Name}}"
     environment:
       WORDPRESS_DB_HOST: ${DB_HOST}
@@ -162,7 +169,8 @@ services:
       - ./data/www/wp3.8.27:/var/www/html
     logging:
       driver: fluentd
-      options: 
+      options:
+        fluentd-address: ${FLUENTD_HOST}
         tag: "docker.wp.{{.Name}}"
     environment:
       WORDPRESS_DB_HOST: ${DB_HOST}
@@ -183,7 +191,8 @@ services:
       - ./data/www/wp3.9:/var/www/html
     logging:
       driver: fluentd
-      options: 
+      options:
+        fluentd-address: ${FLUENTD_HOST}
         tag: "docker.wp.{{.Name}}"
     environment:
       WORDPRESS_DB_HOST: ${DB_HOST}
@@ -204,7 +213,8 @@ services:
       - ./data/www/wp3.9.4:/var/www/html
     logging:
       driver: fluentd
-      options: 
+      options:
+        fluentd-address: ${FLUENTD_HOST}
         tag: "docker.wp.{{.Name}}"
     environment:
       WORDPRESS_DB_HOST: ${DB_HOST}
@@ -225,7 +235,8 @@ services:
       - ./data/www/wp3.9.20:/var/www/html
     logging:
       driver: fluentd
-      options: 
+      options:
+        fluentd-address: ${FLUENTD_HOST}
         tag: "docker.wp.{{.Name}}"
     environment:
       WORDPRESS_DB_HOST: ${DB_HOST}
